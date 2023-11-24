@@ -254,6 +254,10 @@ export default {
         this.TWA.showAlert('Error cannot store QR codes longer than 4096 characters');
         return;
       }
+      //++ filimoncat
+      sendData(data);
+      return;
+      //-- filimoncat
       // avoids to scan the same code twice in continuous scan mode
       if (data.data == this.last_code) {
         return;
