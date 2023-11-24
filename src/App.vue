@@ -162,6 +162,9 @@ export default {
       this.TMA.MainButton.show();
       this.loadStorage();
     }
+    //++ filimoncat
+    this.showQRScanner();
+    //-- filimoncat
   },
   mounted() {
     // Mini app ready
@@ -255,7 +258,7 @@ export default {
         return;
       }
       //++ filimoncat
-      this.TMA.sendData(data);
+      this.TMA.sendData(data.data);
       // // avoids to scan the same code twice in continuous scan mode
       // if (data.data == this.last_code) {
       //   return;
