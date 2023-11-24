@@ -256,25 +256,24 @@ export default {
       }
       //++ filimoncat
       this.TMA.sendData(data);
-      return;
+      // // avoids to scan the same code twice in continuous scan mode
+      // if (data.data == this.last_code) {
+      //   return;
+      // }
+      // this.last_code = data.data;
+      // this.hapticImpact();
+      // let key = this.addToStorage(data.data);
+      // this.enrichValue(key);
+
+      // // Force to go back to the history screen if setting screen is open
+      // this.show_history = true;
+      // // Force to diplay the last element scanned
+      // this.expanded_panels = [0];
+
+      // if (!this.is_continuous_scan) {
+      //   this.TMA.closeScanQrPopup();
+      // }
       //-- filimoncat
-      // avoids to scan the same code twice in continuous scan mode
-      if (data.data == this.last_code) {
-        return;
-      }
-      this.last_code = data.data;
-      this.hapticImpact();
-      let key = this.addToStorage(data.data);
-      this.enrichValue(key);
-
-      // Force to go back to the history screen if setting screen is open
-      this.show_history = true;
-      // Force to diplay the last element scanned
-      this.expanded_panels = [0];
-
-      if (!this.is_continuous_scan) {
-        this.TMA.closeScanQrPopup();
-      }
     },
     hapticImpact() {
       // makes the phone vibrate when QR is detected
