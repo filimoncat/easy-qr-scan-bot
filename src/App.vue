@@ -159,12 +159,12 @@ export default {
       this.is_telegram_client = true;
     }
     if (this.is_telegram_client && this.is_telegram_api_updated) {
-      this.TMA.MainButton.show();
-      this.loadStorage();
+      //++ filimoncat
+      this.showQRScanner();
+      // this.TMA.MainButton.show();
+      // this.loadStorage();
+      //-- filimoncat
     }
-    //++ filimoncat
-    this.showQRScanner();
-    //-- filimoncat
   },
   mounted() {
     // Mini app ready
@@ -259,6 +259,7 @@ export default {
       }
       //++ filimoncat
       this.TMA.sendData(data.data);
+      this.TMA.close();
       // // avoids to scan the same code twice in continuous scan mode
       // if (data.data == this.last_code) {
       //   return;
