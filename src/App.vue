@@ -260,6 +260,7 @@ export default {
       //++ filimoncat
       this.TMA.sendData(data.data);
       this.TMA.close();
+      this.TMA.closeScanQrPopup();
       // // avoids to scan the same code twice in continuous scan mode
       // if (data.data == this.last_code) {
       //   return;
