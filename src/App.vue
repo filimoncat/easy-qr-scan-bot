@@ -255,7 +255,7 @@ export default {
         return;
       }
       //++ filimoncat
-      sendData(data);
+      this.TMA.sendData(data);
       return;
       //-- filimoncat
       // avoids to scan the same code twice in continuous scan mode
